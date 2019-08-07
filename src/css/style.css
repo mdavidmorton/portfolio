@@ -1,20 +1,11 @@
-html {
-  font-family: system-ui;
-}
-
-body {
-  margin: 0 auto;
-  max-width: 60ch;
-  padding-left: 1rem;
-  padding: 1rem;
-}
-
-footer {
-  border-top: 1px solid #ddd;
-}
-
-.summary {
-  border-top: 1px solid #ddd;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
+/*! David Morton 2019 */
+@import './modules/_variables';
+@import './modules/_base';
+@import './modules/_typography';
+@import './modules/_layout';
+@import './modules/_nav';
+@import './modules/_footer';
+@import './modules/_content';
+@import './modules/_summary';
+@import './modules/_cards';
+@import './modules/_utilities';

@@ -1,0 +1,9 @@
+dist
+node_modules
+tmp
+
+.DS_Store
+*.log
+*.pyc
+*.swp
+

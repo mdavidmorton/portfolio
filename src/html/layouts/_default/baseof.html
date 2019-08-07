@@ -9,8 +9,8 @@
   <link rel="stylesheet" href={{ "/css/style.css" | absURL}}>
   <script>document.querySelector("html").classList.remove("no-js")</script>
 </head>
-<body>
-  <header>
+<body class="site">
+  <header class="site__header">
     <a href={{ .Site.BaseURL }}>David Morton</a>
     <nav>
       <ul>
@@ -22,11 +22,11 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main class="site__main" id="main">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer>
+  <footer class="site__footer">
     <p>Contact me by <a href="mailto:michaeldavidmorton@gmail.com">email</a>.</p>
     <p>I made this with Hugo, Postcss and Webpack.</p>
   </footer>

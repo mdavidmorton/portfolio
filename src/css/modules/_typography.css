@@ -1,1 +1,47 @@
 /* _typography.css */
+
+:--heading {
+  line-height: var(--line-height--heading);
+}
+
+h1 {
+  font-size: var(--font-size--h1);
+}
+
+h2 {
+  font-size: var(--font-size--h2);
+}
+
+h3 {
+  font-size: var(--font-size--h3);
+}
+
+h4 {
+  font-size: var(--font-size--h4);
+}
+
+h5 {
+  font-size: var(--font-size--h5);
+}
+
+h6 {
+  font-size: var(--font-size--h6);
+}
+
+a {
+  color: var(--blue);
+}
+
+:--heading > a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+small {
+  font-size: var(--font-size--small);
+}

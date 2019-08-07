@@ -1,0 +1,46 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "author": "David Morton <michaeldavidmorton@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.0.0",
+    "postcss-cli": "^6.1.3",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.2",
+    "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.7.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-merge": "^4.2.1"
+  },
+  "scripts": {
+    "css": "postcss src/css/*.css --dir dist/css/",
+    "css:lint": "stylelint src/css/**/*",
+    "css:production": "yarn css:lint && NODE_ENV=production postcss src/css/*.css --dir static/css/",
+    "dev": "npm-run-all html css js --parallel serve watch",
+    "html": "hugo -s ./src/html",
+    "js": "webpack --config webpack.dev.js",
+    "js:lint": "eslint src/js/**/*",
+    "js:production": "yarn js:lint && webpack --config webpack.prod.js",
+    "lint": "run-p js:lint css:lint",
+    "production": "run-p js:production css:production",
+    "serve": "browser-sync start -s ./dist -w ./dist -b Firefox",
+    "watch": "run-p watch:*",
+    "watch:css": "onchange './src/css/**/*' -- yarn css",
+    "watch:html": "onchange './src/html/**/*' -- yarn html",
+    "watch:js": "onchange './src/js/**/*' -- yarn js"
+  },
+  "dependencies": {
+    "eslint": "^6.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0"
+  }
+}

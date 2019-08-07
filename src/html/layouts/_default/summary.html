@@ -1,0 +1,5 @@
+<section class="summary">
+  {{ with .Section }}<span>{{ title . }}</span>{{ end }}
+  <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+  <p>{{ .Summary }}</p>
+</section>

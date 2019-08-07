@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article>
+  <header>
+    <span>{{ title .Section }}</span>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Summary }}</p>
+    {{ with .Params.Contributions }}
+    <div>
+      <strong>Contributions</strong>
+      <ul>
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ if .Params.ExternalURL }}
+    <div>
+      Permalink: <a href={{ .Params.ExternalURL }}>{{ .Params.Client }}</a>
+    </div>
+    {{ end }}
+  </header>
+  <section>
+    {{ .Content }}
+  </section>
+  <!-- related -->
+</article>
+{{ end }}

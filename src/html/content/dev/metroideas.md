@@ -10,7 +10,7 @@ tools:
   - ES5
 contributions:
   - Web development
-  - Cotnent strategy
+  - Content strategy
   - Editorial
 resources:
   - name: banner

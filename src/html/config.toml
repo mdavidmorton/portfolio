@@ -1,2 +1,14 @@
 baseURL = "/"
 publishDir = "../../dist"
+title = "David Morton Portfolio"
+
+[params]
+  summary = "David Morton is a writer, journalist and web developer from Chattanooga, Tennessee."
+
+[author]
+  name = "David Morton"
+  email = "michaeldavidmorton@gmail.com"
+
+[taxonomies]
+  contribution = "contributions"
+  tool = "tools"

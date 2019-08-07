@@ -1,6 +1,5 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
 {{ range .Pages }}
-  {{ .Render "summary" }}
+{{ .Render "summary" }}
 {{ end }}
 {{ end }}

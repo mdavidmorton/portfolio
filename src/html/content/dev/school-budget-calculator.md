@@ -11,7 +11,8 @@ tools:
   - Postcss
   - ES6
 contributions:
-  - UI/UX
+  - UI
+  - UX
   - Web development
   - Data analysis
   - Copywriting

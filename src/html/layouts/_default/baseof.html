@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ with .Title }}{{ . }} — {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.Summary }}{{ end }}">
+  <link rel="stylesheet" href={{ "/css/style.css" | absURL}}>
+  <script>document.querySelector("html").classList.remove("no-js")</script>
+</head>
+<body>
+  <header>
+    <a href={{ .Site.BaseURL }}>David Morton</a>
+    <nav>
+      <ul>
+        <li><a href={{ "/about" | absURL }}>About</a></li>
+        <li><a href={{ "/writing" | absURL }}>Writing</a></li>
+        <li><a href={{ "/editorial" | absURL }}>Editorial</a></li>
+        <li><a href={{ "/dev" | absURL }}>Dev</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>Contact me by <a href="mailto:michaeldavidmorton@gmail.com">email</a>.</p>
+    <p>I made this with Hugo, Postcss and Webpack.</p>
+  </footer>
+  <!-- footer -->
+  <script src={{ "/js/app.bundle.js" | absURL }}></script>
+</body>
+</html>

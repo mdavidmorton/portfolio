@@ -1,0 +1,13 @@
+/* _mixins.css */
+
+@define-mixin stack $parent, $marginTop: var(--gutter) {
+  $(parent) > :first-child {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  $(parent) > * + * {
+    margin-bottom: 0;
+    margin-top: $marginTop;
+  }
+}

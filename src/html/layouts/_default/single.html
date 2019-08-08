@@ -1,24 +1,28 @@
 {{ define "main" }}
-<article>
-  <header>
-    <span>{{ title .Section }}</span>
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Summary }}</p>
-    {{ with .Params.Contributions }}
-    <div>
-      <strong>Contributions</strong>
-      <ul>
-        {{ range . }}<li>{{ . }}</li>{{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    {{ if .Params.ExternalURL }}
-    <div>
-      Permalink: <a href={{ .Params.ExternalURL }}>{{ .Params.Client }}</a>
-    </div>
-    {{ end }}
-  </header>
-  <section>
+<article class="article">
+  <div class="article__banner">
+    <header class="article__header">
+      <div class="article__meta">
+        {{ with .Params.Contributions }}{{ range first 1 . }}{{ . }}{{ end }}{{ end }}
+      </div>
+      <h1 class="article__title">{{ .Title }}</h1>
+      <p class="article__description">{{ .Summary }}</p>
+      {{ with .Params.Contributions }}
+        <ul class="list--tags">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      {{ end }}
+      {{ if .Params.ExternalURL }}
+      <div class="article__meta">
+        Permalink: <a href={{ .Params.ExternalURL }}>{{ .Params.Client }}</a>
+      </div>
+      {{ end }}
+    </header>
+    <figure class="article__figure">
+      <img src="https://source.unsplash.com/random/1200x800" alt="">
+    </figure>
+  </div>
+  <section class="article__content">
     {{ .Content }}
   </section>
   <!-- related -->

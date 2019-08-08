@@ -1,1 +1,27 @@
 /* _utilities.css */
+
+.list--tags {
+  align-items: space-between;
+  display: flex;
+  font-size: var(--font-size--small);
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.list--tags > li {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  line-height: 1;
+  margin-right: var(--gutter);
+  margin-bottom: 4px;
+  margin-top: 4px;
+  padding: 4px;
+}
+
+.list--tags > li:last-of-type {
+  margin-right: 0;
+}

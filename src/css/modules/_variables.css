@@ -4,14 +4,14 @@
   /* Typography */
   --font-family--sans-serif: Avenir, "Avenir Next", system-ui;
   --font-family--serif: Georgia, serif;
-  --font-size--h1: 2em;
-  --font-size--h2: 1.5em;
-  --font-size--h3: 1.17em;
+  --font-size--h1: 2rem;
+  --font-size--h2: 1.5rem;
+  --font-size--h3: 1.17rem;
   --font-size--h4: 1.12rem;
-  --font-size--h5: 0.83em;
-  --font-size--h6: 0.75em;
-  --font-size--small: 0.83em;
-  --line-height--root: 1.5;
+  --font-size--h5: 0.83rem;
+  --font-size--h6: 0.75rem;
+  --font-size--small: 0.83rem;
+  --line-height--root: 1.6;
   --line-height--heading: 1.1;
 
   /* Color */
@@ -22,12 +22,18 @@
 
   /* Decorative */
   --border: 1px solid var(--silver);
-  --border-radius: 3px;
+  --border-radius: 0;
 
   /* Layout */
-  --grid-gap: 3rem;
-  --gutter: 1.5rem;
+  --grid-gap: 3.2rem;
+  --gutter: 1.6rem;
   --max-width: 60ch;
+}
+
+@supports (display: grid) {
+  :root {
+    --max-width: 120ch;
+  }
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;

@@ -11,9 +11,11 @@
 </head>
 <body class="site">
   <header class="site__header">
-    <a href={{ .Site.BaseURL }}>David Morton</a>
-    <nav>
-      <ul>
+    <h1 class="site__title">
+      <a href={{ .Site.BaseURL }}>David Morton</a>
+    </h1>
+    <nav class="site__nav">
+      <ul class="list--row">
         <li><a href={{ "/about" | absURL }}>About</a></li>
         <li><a href={{ "/writing" | absURL }}>Writing</a></li>
         <li><a href={{ "/editorial" | absURL }}>Editorial</a></li>
@@ -27,8 +29,8 @@
   </main>
 
   <footer class="site__footer">
-    <p>Contact me by <a href="mailto:michaeldavidmorton@gmail.com">email</a>.</p>
-    <p>I made this with Hugo, Postcss and Webpack.</p>
+    <p>I made this with <a href="https://gohugo.io/">Hugo</a>, <a href="https://postcss.org/">Postcss</a> and <a href="https://webpack.js.org/">Webpack</a>. Hosting by <a href="https://www.netlify.com/">Netlify</a>.</p>
+    <p><a href="mailto:michaeldavidmorton@gmail.com">Contact</a></p>
   </footer>
   <!-- footer -->
   <script src={{ "/js/app.bundle.js" | absURL }}></script>

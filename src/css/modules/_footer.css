@@ -1,1 +1,10 @@
 /* _footer.css */
+
+.site__footer {
+  border-top: var(--border);
+  padding-bottom: var(--gutter);
+  padding-top: var(--gutter);
+  text-align: center;
+}
+
+@mixin stack .site__footer;

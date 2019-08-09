@@ -1,1 +1,52 @@
 /* _nav.css */
+
+@mixin stack .site__header;
+
+.site__header {
+  border-bottom: var(--border);
+  padding-bottom: var(--gutter);
+  padding-top: var(--gutter);
+}
+
+.site__title {
+  font-size: var(--font-size--h3);
+  text-align: center;
+  text-decoration: none;
+}
+
+.site__nav {
+  font-size: var(--font-size--small);
+}
+
+.site__nav a {
+  text-decoration: none;
+}
+
+.site__nav a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 576px) {
+  .site__header {
+    display: flex;
+    padding-bottom: calc(var(--gutter) * 0.75);
+    padding-top: calc(var(--gutter) * 0.75);
+    justify-content: space-between;
+  }
+
+  .site__nav {
+    margin: 0;
+  }
+
+  .site__title {
+    text-align: left;
+  }
+
+  .site__nav li {
+    margin-right: var(--gutter);
+  }
+
+  .site__nav li:last-of-type {
+    margin-right: 0;
+  }
+}

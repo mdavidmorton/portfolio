@@ -1,22 +1,9 @@
 <section class="banner">
   <header class="banner__header">
-    <div class="banner__meta">
-      {{ with .Params.Contributions }}{{ range first 1 . }}{{ . }}{{ end }}{{ end }}
-    </div>
     <h1 class="banner__title">
       <a href={{ .Permalink }}>{{ .Title }}</a>
     </h1>
     <p class="banner__description">{{ .Summary }}</p>
-    {{ with .Params.Contributions }}
-      <ul class="list--tags">
-        {{ range . }}<li>{{ . }}</li>{{ end }}
-      </ul>
-    {{ end }}
-    {{ if .Params.ExternalURL }}
-    <div class="banner__meta">
-      Permalink: <a href={{ .Params.ExternalURL }}>{{ .Params.Client }}</a>
-    </div>
-    {{ end }}
   </header>
   <figure class="banner__figure">
     <img src="https://source.unsplash.com/random/1200x800" alt="">

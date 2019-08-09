@@ -17,7 +17,7 @@
   max-width: calc(100% + var(--gutter) + var(--gutter));
 }
 
-.banner__figure > img {
+.banner__figure img {
   display: block;
   height: 100%;
   object-fit: cover;
@@ -25,9 +25,19 @@
 }
 
 .banner + .banner {
-  border-top: var(--border);
   margin-top: var(--grid-gap);
   padding-top: var(--grid-gap);
+  position: relative;
+}
+
+.banner + .banner::before {
+  border: var(--border);
+  content: "";
+  height: 1px;
+  left: 35%;
+  top: calc(var(--gutter) * 0.25);
+  position: absolute;
+  width: 30%;
 }
 
 @media (min-width: 900px) {
@@ -43,6 +53,10 @@
 
     .banner + .banner {
       padding-top: 0;
+    }
+
+    .banner + .banner::before {
+      display: none;
     }
 
     .banner__header {

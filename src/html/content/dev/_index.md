@@ -1,11 +1,7 @@
 ---
-title: Web Development
+title: Dev
 date:
-summary:
-client:
-externalURL:
-tools: []
-contributions: []
+summary: Data analysis, visualization and front-end
 resources:
   - name: banner
     src:

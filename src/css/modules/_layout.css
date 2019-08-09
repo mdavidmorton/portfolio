@@ -14,3 +14,9 @@
   margin-right: auto;
   max-width: var(--max-width);
 }
+
+/* Main */
+.site__main {
+  margin-bottom: var(--grid-gap);
+  margin-top: var(--grid-gap);
+}

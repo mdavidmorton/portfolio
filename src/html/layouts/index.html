@@ -1,5 +1,18 @@
 {{ define "main" }}
-{{ range .Pages }}
-  {{ .Render "summary" }}
+{{ range .Site.Sections }}
+<section class="banner">
+  <header class="banner__header">
+    <h1 class="banner__title">
+      <a href={{ .Permalink }}>{{ .Title }}</a>
+    </h1>
+    <p class="banner__description">{{ .Summary }}</p>
+  </header>
+  <figure class="banner__figure">
+    <a href={{ .Permalink }}>
+      <img src="https://source.unsplash.com/random/1200x800" alt="">
+    </a>
+  </figure>
+  </header>
+</section>
 {{ end }}
 {{ end }}

@@ -1,11 +1,7 @@
 ---
-title:
+title: Writing
 date:
-summary:
-client:
-externalURL:
-tools: []
-contributions: []
+summary: Journalism and marketing
 resources:
   - name: banner
     src:

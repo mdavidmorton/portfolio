@@ -1,11 +1,7 @@
 ---
 title: Editorial
 date:
-summary:
-client:
-externalURL:
-tools: []
-contributions: []
+summary: Editing, content development and art direction
 resources:
   - name: banner
     src:

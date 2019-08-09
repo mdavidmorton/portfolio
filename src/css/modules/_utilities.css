@@ -2,10 +2,22 @@
 
 .list--row {
   display: flex;
+  list-style-type: none;
   justify-content: space-between;
   margin: 0;
   padding: 0;
+}
+
+.list--row--left {
+  display: flex;
   list-style-type: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.list--row--left > li + li {
+  margin-left: var(--gutter);
 }
 
 .list--tags {

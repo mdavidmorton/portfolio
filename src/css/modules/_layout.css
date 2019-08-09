@@ -20,3 +20,5 @@
   margin-bottom: var(--grid-gap);
   margin-top: var(--grid-gap);
 }
+
+@mixin stack .homepage, var(--grid-gap);

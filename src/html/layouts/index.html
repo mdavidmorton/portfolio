@@ -1,18 +1,41 @@
 {{ define "main" }}
-{{ range .Site.Sections }}
-<section class="banner">
-  <header class="banner__header">
-    <h1 class="banner__title">
-      <a href={{ .Permalink }}>{{ .Title }}</a>
-    </h1>
-    <p class="banner__description">{{ .Summary }}</p>
-  </header>
-  <figure class="banner__figure">
-    <a href={{ .Permalink }}>
-      <img src="https://source.unsplash.com/random/1200x800" alt="">
-    </a>
-  </figure>
-  </header>
-</section>
-{{ end }}
+<div class="homepage">
+  <section class="banner" id="intro">
+    <header class="banner__header">
+      <h1 class="banner__title--xl">{{ .Title }}</h1>
+      <div class="banner__description">
+        {{ .Summary }}
+      </div>
+      <ul class="list--row--left">
+        <li><a href="mailto:michaeldavidmorton@gmail.com">Email</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </header>
+    <figure class="banner__figure">
+      <img src="https://source.unsplash.com/random/600x400" alt="">
+    </figure>
+  </section>
+
+  <section class="homepage__content" id="about">
+    {{ .Content }}
+  </section>
+
+  {{ range .Site.Sections }}
+  <section class="banner" id={{ lower .Name }}>
+    <header class="banner__header">
+      <h1 class="banner__title">
+        <a href={{ .Permalink }}>{{ .Title }}</a>
+      </h1>
+      <p class="banner__description">{{ .Summary }}</p>
+    </header>
+    <figure class="banner__figure">
+      <a href={{ .Permalink }}>
+        <img src="https://source.unsplash.com/random/600x400" alt="">
+      </a>
+    </figure>
+  </section>
+  {{ end }}
+</div>
 {{ end }}

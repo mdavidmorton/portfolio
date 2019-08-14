@@ -43,16 +43,16 @@
 }
 
 /* Put here to avoid Stylelint errors before compiling production */
+.list--row--footer > li {
+  margin-right: var(--gutter);
+}
+
 .list--nav > li + li {
   margin-left: var(--gutter);
 }
 
 .list--row > li + li {
   margin-left: var(--gutter);
-}
-
-.list--row--footer > li {
-  margin-right: var(--gutter);
 }
 
 .list--row--footer > :last-child {

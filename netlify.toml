@@ -1,0 +1,6 @@
+[build]
+  command = "yarn deploy"
+  publish = "dist"
+
+[context.production]
+  NODE_ENV = "production"

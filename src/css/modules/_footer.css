@@ -4,7 +4,13 @@
   border-top: var(--border);
   padding-bottom: var(--gutter);
   padding-top: var(--gutter);
-  text-align: center;
+}
+
+@media (min-width: 432px) {
+  .site__footer > * {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @mixin stack .site__footer;

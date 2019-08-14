@@ -11,7 +11,6 @@
 
 .site__title {
   font-size: 1rem;
-  text-align: center;
   text-decoration: none;
 }
 
@@ -43,14 +42,5 @@
 
   .site__title {
     font-size: var(--font-size--small);
-    text-align: left;
-  }
-
-  .site__nav li {
-    margin-right: var(--gutter);
-  }
-
-  .site__nav li:last-of-type {
-    margin-right: 0;
   }
 }

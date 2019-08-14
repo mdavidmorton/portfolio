@@ -15,7 +15,7 @@
       <a href={{ .Site.BaseURL }}>David Morton</a>
     </h1>
     <nav class="site__nav">
-      <ul class="list--row">
+      <ul class="list--nav">
         {{ range .Site.Sections }}
         <li><a href={{ .Permalink }}>{{ .Title }}</a></li>
         {{ end }}
@@ -28,8 +28,14 @@
   </main>
 
   <footer class="site__footer" id="footer">
-    <p>Built with <a href="https://gohugo.io/">Hugo</a> and <a href="https://postcss.org/">Postcss</a>. Hosting by <a href="https://www.netlify.com/">Netlify</a>.</p>
-    <p><a href="mailto:michaeldavidmorton@gmail.com">Contact</a></p>
+    <ul class="list--row--footer">
+      <li><a href={{ .Site.BaseURL }}>Home</a></li>
+      {{ range .Site.Sections }}
+      <li><a href={{ .Permalink }}>{{ .Title }}</a></li>
+      {{ end }}
+      <li><a href="mailto:michaeldavidmorton@gmail.com">Contact</a></li>
+    </ul>
+    <p>Built with <a href="https://gohugo.io/">Hugo</a> and <a href="https://postcss.org/">Postcss</a></p>
   </footer>
   <!-- footer -->
   <script src={{ "/js/app.bundle.js" | absURL }}></script>

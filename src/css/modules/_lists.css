@@ -1,19 +1,23 @@
 /* _utilities.css */
 
-.list--row {
+.list--nav {
   display: flex;
   list-style-type: none;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 
-.list--row--left {
+.list--row,
+.list--row--footer {
   display: flex;
   list-style-type: none;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
+}
+
+.list--row--footer {
+  flex-wrap: wrap;
 }
 
 .list--tags {
@@ -38,9 +42,21 @@
   padding: 4px;
 }
 
-/* Put here to avoid compile errors via Stylelint */
-.list--row--left > li + li {
+/* Put here to avoid Stylelint errors before compiling production */
+.list--nav > li + li {
   margin-left: var(--gutter);
+}
+
+.list--row > li + li {
+  margin-left: var(--gutter);
+}
+
+.list--row--footer > li {
+  margin-right: var(--gutter);
+}
+
+.list--row--footer > :last-child {
+  margin-right: 0;
 }
 
 .list--tags > li:last-of-type {

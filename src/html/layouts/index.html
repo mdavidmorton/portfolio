@@ -8,34 +8,19 @@
       </div>
       <ul class="list--row--left">
         <li><a href="mailto:michaeldavidmorton@gmail.com">Email</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Github</a></li>
-        <li><a href="#">LinkedIn</a></li>
+        <li><a href="https://github.com/mdavidmorton/">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/mdavidmorton/">LinkedIn</a></li>
       </ul>
     </header>
-    <figure class="banner__figure">
-      <img src="https://source.unsplash.com/random/600x400" alt="">
-    </figure>
+    {{ with $img := (.Resources.GetMatch "banner") }}
+      <figure class="banner__figure">
+        {{ partial "banner-image.html" $img }}
+      </figure>
+    {{ end }}
   </section>
 
   <section class="homepage__content" id="about">
     {{ .Content }}
   </section>
-
-  {{ range .Site.Sections }}
-  <section class="banner" id={{ lower .Name }}>
-    <header class="banner__header">
-      <h1 class="banner__title">
-        <a href={{ .Permalink }}>{{ .Title }}</a>
-      </h1>
-      <p class="banner__description">{{ .Summary }}</p>
-    </header>
-    <figure class="banner__figure">
-      <a href={{ .Permalink }}>
-        <img src="https://source.unsplash.com/random/600x400" alt="">
-      </a>
-    </figure>
-  </section>
-  {{ end }}
 </div>
 {{ end }}

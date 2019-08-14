@@ -3,7 +3,7 @@
   <div class="banner">
     <header class="banner__header">
       <div class="banner__meta">
-        {{ with .Params.Contributions }}{{ range first 1 . }}{{ . }}{{ end }}{{ end }}
+        <a href={{ absURL .Section }}>{{ title .Section }}</a>
       </div>
       <h1 class="banner__title">{{ .Title }}</h1>
       <p class="banner__description">{{ .Summary }}</p>
@@ -18,13 +18,26 @@
       </div>
       {{ end }}
     </header>
-    <figure class="banner__figure">
-      <img src="https://source.unsplash.com/random/1200x800" alt="">
-    </figure>
+    {{ with $img := (.Resources.GetMatch "banner") }}
+      <figure class="banner__figure">
+        {{ partial "banner-image.html" $img }}
+      </figure>
+    {{ end }}
   </div>
+
   <section class="article__content">
     {{ .Content }}
   </section>
-  <!-- related -->
+
+  {{ with $related := .Site.RegularPages.Related . }}
+    <section class="article__content">
+      <h3>Related</h3>
+      <ul>
+        {{ range first 3 $related }}
+        <li><a href={{ .Permalink }}>{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
 </article>
 {{ end }}

@@ -10,15 +10,15 @@
   <script>document.querySelector("html").classList.remove("no-js")</script>
 </head>
 <body class="site">
-  <header class="site__header">
+  <header class="site__header" id="footer">
     <h1 class="site__title">
-      <a href={{ .Site.BaseURL }}>David Morton</span></a>
+      <a href={{ .Site.BaseURL }}>David Morton</a>
     </h1>
     <nav class="site__nav">
       <ul class="list--row">
-        <li><a href={{ "/writing" | absURL }}>Writing</a></li>
-        <li><a href={{ "/dev" | absURL }}>Dev</a></li>
-        <li><a href={{ "/editorial" | absURL }}>Editorial</a></li>
+        {{ range .Site.Sections }}
+        <li><a href={{ .Permalink }}>{{ .Title }}</a></li>
+        {{ end }}
       </ul>
     </nav>
   </header>
@@ -27,8 +27,8 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="site__footer">
-    <p>I made this with <a href="https://gohugo.io/">Hugo</a>, <a href="https://postcss.org/">Postcss</a> and <a href="https://webpack.js.org/">Webpack</a>. Hosting by <a href="https://www.netlify.com/">Netlify</a>.</p>
+  <footer class="site__footer" id="footer">
+    <p>Built with <a href="https://gohugo.io/">Hugo</a> and <a href="https://postcss.org/">Postcss</a>. Hosting by <a href="https://www.netlify.com/">Netlify</a>.</p>
     <p><a href="mailto:michaeldavidmorton@gmail.com">Contact</a></p>
   </footer>
   <!-- footer -->

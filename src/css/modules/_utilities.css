@@ -16,10 +16,6 @@
   padding: 0;
 }
 
-.list--row--left > li + li {
-  margin-left: var(--gutter);
-}
-
 .list--tags {
   align-items: space-between;
   display: flex;
@@ -40,6 +36,11 @@
   margin-bottom: 4px;
   margin-top: 4px;
   padding: 4px;
+}
+
+/* Put here to avoid compile errors via Stylelint */
+.list--row--left > li + li {
+  margin-left: var(--gutter);
 }
 
 .list--tags > li:last-of-type {

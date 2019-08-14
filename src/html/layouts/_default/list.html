@@ -1,5 +1,11 @@
 {{ define "main" }}
-{{ range .Pages }}
-{{ .Render "summary" }}
-{{ end }}
+  <section class="banner" id="intro">
+    <header class="banner__header">
+      <h1 class="banner__title">{{ .Title }}</h1>
+      <p class="banner__description">{{ .Summary }}</p>
+    </header>
+  </section>
+  {{ range .Pages.ByWeight }}
+    {{ .Render "summary" }}
+  {{ end }}
 {{ end }}

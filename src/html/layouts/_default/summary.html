@@ -1,12 +1,21 @@
-<section class="banner">
+<section class="banner" id={{ with .File }}{{ .ContentBaseName }}{{ end }}>
   <header class="banner__header">
     <h1 class="banner__title">
       <a href={{ .Permalink }}>{{ .Title }}</a>
     </h1>
     <p class="banner__description">{{ .Summary }}</p>
+    {{ with .Params.Contributions }}
+      <ul class="list--tags">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    {{ end }}
   </header>
-  <figure class="banner__figure">
-    <img src="https://source.unsplash.com/random/1200x800" alt="">
-  </figure>
-  </header>
+  {{ $href := .Permalink }}
+  {{ with $img := (.Resources.GetMatch "banner") }}
+    <figure class="banner__figure">
+      <a href={{ $href }}>
+        {{ partial "banner-image.html" $img }}
+      </a>
+    </figure>
+  {{ end }}
 </section>

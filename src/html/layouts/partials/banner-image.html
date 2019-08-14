@@ -1,0 +1,11 @@
+{{ $small := .Resize "450x" }}
+{{ $medium := .Resize "900x" }}
+{{ $large := .Resize "1800x" }}
+<img
+  srcset="{{ $small.Permalink }} 450w,
+          {{ $medium.Permalink }} 900w,
+          {{ $large.Permalink }} 1800w"
+  src={{ $medium.Permalink }}
+  alt="{{ with .Title }}{{ . }}{{ end }}"
+>
+

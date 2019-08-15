@@ -4,3 +4,6 @@
 
 [context.production]
   NODE_ENV = "production"
+
+[context.production.environment]
+  HUGO_VERSION = "0.56.1"
